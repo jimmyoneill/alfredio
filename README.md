@@ -4,7 +4,7 @@ alfredio
 An Alfred extension for Rdio: add or sync the current song, navigate or search.
 
     r ac            Add the currently playing song to your collection
-    r rc            Remove the currently playing song to your collection
+    r rc            Remove the currently playing song from your collection
     r sm            Sync the currently playing song to mobile
     r rm            Remove the currently playing song from mobile
     
