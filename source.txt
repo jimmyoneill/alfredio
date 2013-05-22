@@ -1,0 +1,38 @@
+on alfred_script(q)
+	set rc to {"rc", "remove"}
+	set ac to {"ac", "add"}
+	set sm to {"sm", "sync"}
+	set rm to {"rm", "unsync"}
+  set hr to {"hr", "heavy", "rotation", "heavy rotation"}
+	set ra to {"ra", "recent", "activity", "recent activity"}
+	set tc to {"tc", "top", "charts", "top charts"}
+	set nr to {"nr", "new", "releases", "new releases"}
+
+  tell application "Rdio"
+ 		if q is in ac then
+			add to collection
+		else if q is in rc then
+			remove from collection
+		else if q is in sm then
+			sync to mobile
+		else if q is in rm then
+			remove from mobile
+		else if q is in hr then
+			activate
+			open location "http://www.rdio.com/"
+		else if q is in ra then
+			activate
+			open location "http://www.rdio.com/activity"
+		else if q is in tc then
+			activate
+			open location "http://www.rdio.com/browse/charts/albums/"
+		else if q is in nr then
+			activate
+			open location "http://www.rdio.com/browse/new/"
+		else
+			set searchURL to "http://www.rdio.com/#/search/" & q
+			activate
+			open location searchURL
+		end if
+	end tell
+end alfred_script
